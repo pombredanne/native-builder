@@ -1,0 +1,9 @@
+language: cpp
+
+notifications:
+  email:
+    - pombredanne@gmail.com
+
+install:
+    - make -d
+
