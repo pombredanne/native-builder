@@ -1,7 +1,10 @@
+language: c
+
+compiler:
+  - gcc
+
 notifications:
   email:
     - pombredanne@gmail.com
 
-install:
-    - make
-
+script: make
