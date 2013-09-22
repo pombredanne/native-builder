@@ -5,5 +5,5 @@ notifications:
     - pombredanne@gmail.com
 
 install:
-    - make -d
+    - make
 
