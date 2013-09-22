@@ -7,4 +7,14 @@ notifications:
   email:
     - pombredanne@gmail.com
 
-script: make
+before_install:
+  sudo apt-get update
+  sudo apt-get install build-essentials mingw-w32 mingw-w64 wine git-core
+
+
+script:
+  make
+
+
+after_success:
+  ls -alR
