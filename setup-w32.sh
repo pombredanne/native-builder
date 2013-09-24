@@ -29,3 +29,5 @@ function build {
   DESTDIR=$HOME/dist mingw make install
   echo "Done Building $PACKAGE"
 }
+
+chmod u+x *
