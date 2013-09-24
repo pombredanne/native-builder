@@ -14,8 +14,6 @@ before_install:
 install:
   - export HOST_TARGET=i586-mingw32msvc
   - source setup.sh
-  - ls -alR /usr/$HOST_TARGET
-  - ls -alR ~/
 
 script:
   - PACKAGE_NAME=zlib PACKAGE_VERSION=1.2.8 PACKAGE_URL=http://zlib.net build
