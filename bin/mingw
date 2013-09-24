@@ -1,0 +1,7 @@
+#!/bin/sh
+export CC=$HOST_TARGET-gcc
+export CXX=$HOST_TARGET-g++
+export CPP=$HOST_TARGET-cpp
+export RANLIB=$HOST_TARGET-ranlib
+export PATH="/usr/$HOST_TARGET/bin:$PATH"
+exec "$@"
