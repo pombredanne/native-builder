@@ -11,7 +11,7 @@ before_install:
   - sudo apt-get install mingw32 wine
 
 install:
-  - source setup-w64.sh
+  - source setup-w32.sh
 
 script:
   - build.sh
