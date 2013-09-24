@@ -8,7 +8,7 @@ notifications:
     - pombredanne@gmail.com
 
 before_install:
-  - sudo apt-get install mingw-w64 wine
+  - sudo apt-get install mingw32 wine
 
 install:
   - source setup-w64.sh
