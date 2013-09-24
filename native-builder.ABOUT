@@ -1,0 +1,4 @@
+about_resource: .
+name: native-builder
+version: dev
+description: A tool to cross-build C/C++ code and Python extensions for Linux, Windows and MacOSX.
