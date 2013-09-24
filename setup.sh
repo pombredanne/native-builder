@@ -3,21 +3,22 @@ HERE=`pwd`
 mkdir -p $HERE/dist
 mkdir -p $HERE/build
 
-chmod u+x $HERE/bin/mingw
-export PATH="$HERE/bin:$PATH"
-chmod u+x *
+export CC=$HOST_TARGET-gcc
+export CXX=$HOST_TARGET-g++
+export CPP=$HOST_TARGET-cpp
+export RANLIB=$HOST_TARGET-ranlib
 
 function build {
   PACKAGE=$PACKAGE_NAME-$PACKAGE_VERSION
   PACKAGE_DOWNLOAD=$PACKAGE_URL/$PACKAGE.tar.gz
   echo "Building $PACKAGE"
-  cd $HOME/build && \
+  cd $HERE/build && \
   curl --progress-bar $PACKAGE_DOWNLOAD | tar -zox
   cd $PACKAGE && \
-  mingw configure --host=$HOST_TARGET && \
-  mingw make
-  DESTDIR=$HERE/dist mingw make install
+  ./configure --host=$HOST_TARGET && \
+  make
+  DESTDIR=$HERE/dist make install
   echo "Done Building $PACKAGE"
-  cd
+  cd $HERE
 }
 
