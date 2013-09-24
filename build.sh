@@ -10,4 +10,3 @@ PACKAGE_NAME=file \
 PACKAGE_VERSION=5.14 \
 PACKAGE_URL=ftp://ftp.astron.com/pub/file \
 build
-

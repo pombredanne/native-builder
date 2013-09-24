@@ -24,7 +24,7 @@ function build {
   cd $HOME/build && \
   curl --progress-bar $PACKAGE_DOWNLOAD | tar -zox
   cd $PACKAGE && \
-  mingw ./configure --host=$HOST_TARGET && \
+  mingw configure --host=$HOST_TARGET && \
   mingw make
   DESTDIR=$HOME/dist mingw make install
   echo "Done Building $PACKAGE"

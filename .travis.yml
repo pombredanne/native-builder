@@ -13,6 +13,7 @@ before_install:
 
 install:
   - source setup-w32.sh
+  - ls -al /usr
 
 script:
   - PACKAGE_NAME=zlib PACKAGE_VERSION=1.2.8 PACKAGE_URL=http://zlib.net build
