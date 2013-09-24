@@ -1,9 +1,10 @@
 #!/bin/sh
-mkdir -p $HOME/dist
-mkdir -p $HOME/build
+HERE=`pwd`
+mkdir -p $HERE/dist
+mkdir -p $HERE/build
 
-chmod u+x $HOME/bin/mingw
-export PATH="$HOME/bin:$PATH"
+chmod u+x $HERE/bin/mingw
+export PATH="$HERE/bin:$PATH"
 chmod u+x *
 
 function build {
@@ -15,7 +16,7 @@ function build {
   cd $PACKAGE && \
   mingw configure --host=$HOST_TARGET && \
   mingw make
-  DESTDIR=$HOME/dist mingw make install
+  DESTDIR=$HERE/dist mingw make install
   echo "Done Building $PACKAGE"
   cd
 }
