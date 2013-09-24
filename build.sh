@@ -1,4 +1,5 @@
 #!/bin/sh
+source setup-w32.sh
 
 PACKAGE_NAME=zlib \
 PACKAGE_VERSION=1.2.8 \
@@ -10,4 +11,3 @@ PACKAGE_VERSION=5.14 \
 PACKAGE_URL=ftp://ftp.astron.com/pub/file \
 build
 
- 
