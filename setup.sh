@@ -8,6 +8,7 @@ export CXX=$HOST_TARGET-g++
 export CPP=$HOST_TARGET-cpp
 export RANLIB=$HOST_TARGET-ranlib
 
+# use a --host target
 function build {
   PACKAGE=$PACKAGE_NAME-$PACKAGE_VERSION
   PACKAGE_DOWNLOAD=$PACKAGE_URL/$PACKAGE.tar.gz
@@ -22,6 +23,7 @@ function build {
   cd $HERE
 }
 
+# do not use a --host target
 function build2 {
   PACKAGE=$PACKAGE_NAME-$PACKAGE_VERSION
   PACKAGE_DOWNLOAD=$PACKAGE_URL/$PACKAGE.tar.gz
