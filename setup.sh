@@ -12,13 +12,25 @@ function build {
   PACKAGE=$PACKAGE_NAME-$PACKAGE_VERSION
   PACKAGE_DOWNLOAD=$PACKAGE_URL/$PACKAGE.tar.gz
   echo "Building $PACKAGE"
-  cd $HERE/build && \
+  cd $HERE/build
   curl --progress-bar $PACKAGE_DOWNLOAD | tar -zox
-  cd $PACKAGE && \
-  ./configure --host=$HOST_TARGET && \
+  cd $PACKAGE
+  ./configure --host=$HOST_TARGET
   make
   DESTDIR=$HERE/dist make install
   echo "Done Building $PACKAGE"
   cd $HERE
 }
 
+function build2 {
+  PACKAGE=$PACKAGE_NAME-$PACKAGE_VERSION
+  PACKAGE_DOWNLOAD=$PACKAGE_URL/$PACKAGE.tar.gz
+  echo "Building $PACKAGE"
+  cd $HERE/build
+  curl --progress-bar $PACKAGE_DOWNLOAD | tar -zox
+  cd $PACKAGE
+  ./configure
+  make
+  DESTDIR=$HERE/dist make install
+  echo "Done Building $PACKAGE"
+  cd $HERE

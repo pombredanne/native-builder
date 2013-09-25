@@ -16,5 +16,5 @@ install:
   - source setup.sh
 
 script:
-  - PACKAGE_NAME=zlib PACKAGE_VERSION=1.2.8 PACKAGE_URL=http://zlib.net build
-  - PACKAGE_NAME=file PACKAGE_VERSION=5.14 PACKAGE_URL=ftp://ftp.astron.com/pub/file build
+  - PACKAGE_NAME=zlib PACKAGE_VERSION=1.2.8 PACKAGE_URL=http://zlib.net build2
+  - PACKAGE_NAME=file PACKAGE_VERSION=5.14 PACKAGE_URL=ftp://ftp.astron.com/pub/file build2
