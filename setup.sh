@@ -34,3 +34,4 @@ function build2 {
   DESTDIR=$HERE/dist make install
   echo "Done Building $PACKAGE"
   cd $HERE
+}
