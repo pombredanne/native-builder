@@ -27,7 +27,7 @@ function build {
 function build2 {
   PACKAGE=$PACKAGE_NAME-$PACKAGE_VERSION
   PACKAGE_DOWNLOAD=$PACKAGE_URL/$PACKAGE.tar.gz
-  echo "Building $PACKAGE"
+  echo "Building $PACKAGE from $PACKAGE_DOWNLOAD"
   cd $HERE/build
   curl --progress-bar $PACKAGE_DOWNLOAD | tar -zox
   cd $PACKAGE
@@ -37,3 +37,20 @@ function build2 {
   echo "Done Building $PACKAGE"
   cd $HERE
 }
+
+function build3 {
+  PACKAGE=$PACKAGE_NAME-$PACKAGE_VERSION
+  PACKAGE_DOWNLOAD=$PACKAGE_URL/$PACKAGE.tar.gzch
+  echo "Building $PACKAGE"
+  cd $HERE/build
+  curl --progress-bar $PACKAGE_DOWNLOAD | tar -zox
+  mkdir -p $PACKAGE-build
+  cd $PACKAGE-build
+  ../$PACKAGE/configure
+make
+DESTDIR=$HERE/dist make install
+echo "Done Building $PACKAGE"
+cd $HERE
+}
+
+
